@@ -1,0 +1,42 @@
+#registration-form {
+    max-width: 16rem;
+}
+
+
+#registration-form label {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    position: relative;
+}
+
+.email-label:before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0;
+    height: 1.6rem;
+    width: 2rem;
+    background-size: 2rem 2rem;
+    background-image: url("/static/assets/icons/noun-email-4466398.svg");
+    filter: invert(100%) contrast(50%);
+}
+
+.password-label:before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0;
+    height: 1.8rem;
+    width: 2rem;
+    background-size: 1.8rem 2rem;
+    background-image: url("/static/assets/icons/noun-password-3383741.svg");
+    filter: invert(100%) contrast(50%);
+}
+
+#reg-password, #reg-email, #login-email, #login-password,#reg-password_confirm {
+    padding: 0.5rem 2.5rem;
+}

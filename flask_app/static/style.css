@@ -1,0 +1,67 @@
+@import 'form.css';
+@import 'nav.css';
+@import 'message.css';
+@import 'profile.css';
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,227,201,1) 100%);
+    --registration-image-bg: url("../assets/images/sunset-friends.jpg");
+    --login-button-bg: #F99D13;
+    --join-button-bg: linear-gradient(90deg, #C87800 0.48%, #F99D13 69.34%, #FFCC80 100.54%);
+    --secondary-color: #5b7c94;
+    --light-background: rgba(255,227,201,1);
+    --nav-height: 8vh;
+    --content-height: 92vh;
+}
+
+
+
+
+/* ================= HERO CONTENT ================= */
+
+
+.hero-bg {
+    background: url('/static/assets/images/sunset-friends.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+    height: var(--content-height);
+}
+
+
+#reg-submit,
+#twofp-submit {
+    background: var(--join-button-bg);
+    color: white;
+    width: 100%;
+    
+}
+#twofp-submit{
+    width:100px;
+}
+
+#hero-container {
+    height: var(--content-height);
+}
+
+.side-content {
+    text-align: right;
+    color: var(--secondary-color);
+}
+
+
+/* ================= VERIFY ============================== */
+
+#verify-content {
+    color: var(--secondary-color);
+    background: rgba(255,227,201,0.88);
+    padding: 1rem;
+    border-radius: 1rem;
+}

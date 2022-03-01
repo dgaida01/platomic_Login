@@ -1,0 +1,60 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<div class="hero-bg">
+    {% if 'id' not in session or session['verified'] == False %}
+    <div id="hero-container" class="container d-flex justify-content-between align-items-center">
+        <form id="registration-form" action="/users/create" method="POST">
+            <div class='flashColoring'>
+                {% with messages = get_flashed_messages() %}
+                <!-- declare a variable called messages -->
+                {% if messages %}
+                <!-- check if there are any messages -->
+                {% for message in messages %}
+                <!-- loop through the messages -->
+                <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <h2>Platomic LOGO</h2>
+            
+            <label class="email-label">
+                <input id="reg-email" name="email" type="email" class="form-control" placeholder="Your Email"
+                    name="email">
+            </label>
+            <label class="password-label">
+                <input id="reg-password" name="password" type="password" class="form-control"
+                    placeholder="Your Password" name="password">
+            </label>
+
+            <label class="password-label">
+                <input id="reg-password_confirm" name="confirm_password" type="password" class="form-control"
+                    placeholder="Re-enter Password">
+            </label>
+            <button id="reg-submit" type="submit" class="btn text-nowrap">JOIN NOW</button>
+        </form>
+    </div> 
+    {%else%} 
+ <div id="hero-container" class="container d-flex justify-content-between align-items-center">
+    <div>
+    <b>Welcome {{session['email']}} Lets get to know you better! </b>
+   
+        <p>to opt in to dule authentication in the future click on the link below <br>
+            an email with a qr code will be sent to your email address use <br>
+            the google authenticator app on your phone to scan this, it will keep <br>
+            track of your pin for use in the future <a href="/authenticate/qr">click here</a></p><br>
+
+        
+    </div>
+    <div class="side-content">
+        <h2>find friends<br>make memories</h2>
+    </div>
+</div>
+    {% endif %}
+
+
+   
+
+
+{% endblock content %}

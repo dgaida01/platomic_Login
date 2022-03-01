@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!-- BRAND -->
+        <a class="navbar-brand" href="#">Platomic LOGO</a>
+        <!-- TOGGLE BUTTON -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- COLLAPSABLE -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- NAV LINKS -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+
+            </ul>
+            <!-- LOGIN FORM -->
+            {% if 'id' not in session or session['verified'] == False %}
+            <form id="login-form" class="d-flex flex-column flex-lg-row" action="/users/login" method="POST">
+                <label class="nav-label email-label"><input id="login-password" class="form-control" type="email" placeholder="Your Email" aria-label="email" name="email"></label>
+                <label class="nav-label password-label"><input id="login-password" class="form-control" type="password" placeholder="Your Password" aria-label="password" name="password"></label>
+                <button id="login-submit" class="btn text-nowrap" type="submit">LOG IN</button>
+            </form>
+            {% else %}
+            <form id="logged-in-nav" action="/logout">
+                <a href="/profile" id="email-in">{{session['email']}}</a>
+                <!-- <button id="login-submit" class="btn text-nowrap" href="/logout">LOG OUT</button> -->
+                <button id="logout-submit" class="btn text-nowrap" type="submit">LOG OUT</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock content %}
+
+{% endblock body %}

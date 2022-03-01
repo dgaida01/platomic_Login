@@ -1,0 +1,8 @@
+.profile-content {
+    background-image: var(--background);
+    height: var(--content-height);
+}
+
+.profile-container {
+    height: var(--content-height);
+}

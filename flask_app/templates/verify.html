@@ -1,0 +1,39 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<div class="hero-bg">
+    <div id="hero-container" class="container d-flex justify-content-between align-items-center">
+
+        <form id="registration-form" action="/users/create" method="POST">
+            <div class='flashColoring'>
+                {% with messages = get_flashed_messages(category_filter=["reg_error"]) %}
+                <!-- declare a variable called messages -->
+                {% if messages %}
+                <!-- check if there are any messages -->
+                {% for message in messages %}
+                <!-- loop through the messages -->
+                <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+
+
+            <div id="verify-content">
+                <h4>Welcome to Platomic!</h4>
+
+                <p><strong>Before we begin, this account's email has not yet been verified.</strong></p>
+
+                <p>Please check the e-mail address you signed up with for the verification link.</p>
+                <small><a href="/">Resend link</a></small>
+            </div>
+
+        </form>
+
+        <div class="side-content">
+            <h2>find friends<br>make memories</h2>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

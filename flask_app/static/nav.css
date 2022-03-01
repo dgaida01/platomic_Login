@@ -1,0 +1,30 @@
+.navbar {
+    background: var(--background);
+    
+    box-shadow: 0 0 20px rgba(0,0,0,0.27);
+    min-height: 8vh;
+    z-index: 2;
+}
+
+
+.nav-label, #login-submit {
+    margin: 0.5rem 0.5rem;
+}
+
+
+#login-submit, #logout-submit {
+    background: var(--login-button-bg);
+    color: white;
+}
+
+#email-in {
+    text-decoration: none;
+    color: initial;
+}
+
+#logout {
+    appearance: button;
+    background-color: var(--login-button-bg);
+    text-decoration: none;
+    color: white;
+}
