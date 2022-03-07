@@ -98,34 +98,34 @@ class User:
         is_valid = True
         if len(password) < 8 or len(password) > 32:
             if not login:
-                flash("be 8-32 characters", "password")
+                flash("Passwords should be 8-32 characters", "password")
             is_valid = False
 
         if re.search("[a-z]", password) == None:
             if not login:
-                flash("contain a lowercase letter", "password")
+                flash("Password should contain a lowercase letter", "password")
             is_valid = False
 
         if re.search("[A-Z]", password) == None:
             if not login:
-                flash("contain at an uppercase letter", "password")
+                flash("Password should contain at an uppercase letter", "password")
             is_valid = False
 
         if re.search("[0-9]", password) == None:
             if not login:
-                flash("contain a number", "password")
+                flash("Password should contain a number", "password")
             is_valid = False
 
         if re.search("[!@#$%^&*()?._-]", password) == None:
             if not login:
                 flash(
-                    "contain a special character ex: !@#$%^&*()?._-", "password")
+                    "Password should contain a special character ex: !@#$%^&*()?._-", "password")
             is_valid = False
 
         if INVALIDS.match(password):
             if not login:
                 flash(
-                    "only be alphanumeric or !@#$%^&*()?._- characters", "password")
+                    "Password should only be alphanumeric or !@#$%^&*()?._- characters", "password")
             is_valid = False
         return is_valid
 

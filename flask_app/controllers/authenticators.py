@@ -40,7 +40,7 @@ def authenticate():
         print("I AM ADDING A USER WG/at")
         return redirect ('/user/add_user')
     else:
-        flash("Pin did not match please try again")
+        flash("Pin did not match please try again", "reg_error2")
     
     if 'pin' in session:
         if session['pin']!=token.getpin():
@@ -48,7 +48,7 @@ def authenticate():
             session.pop('pin')
             session.pop('secret')
     
-    return redirect('/')
+    return render_template('authenticate_email.html')
 
 
 @app.route('/authenticate/qr')
@@ -97,7 +97,7 @@ def authenticate2f():
         print("YOU all good to go")
         return redirect ('/')
     else:
-        flash("Pin did not match please try again")
+        flash("Pin did not match please try again", "reg_error2")
     
     # if 'pin' in session:
     #     if session['pin']!=token.getpin():
